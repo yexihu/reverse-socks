@@ -1,8 +1,11 @@
 package se.jrat.plugin.socks.client;
 
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.ImageIcon;
 
 import jrat.api.RATControlMenuEntry;
 import jrat.api.RATMenuItem;
@@ -16,6 +19,8 @@ import jrat.api.events.OnSendPacketEvent;
 
 public class SocksPlugin extends RATPlugin {
 
+	public static final String ICON_LOCATION = System.getProperty("jrat.dir") + File.separator + "/files/plugins/SOCKS/icon.png";
+	
 	@Override
 	public void onEnable(OnEnableEvent event) throws Exception {
 		
@@ -48,7 +53,7 @@ public class SocksPlugin extends RATPlugin {
 
 	@Override
 	public String getName() {
-		return "Reverse SOCKS";
+		return "SOCKS";
 	}
 
 	@Override
@@ -69,7 +74,7 @@ public class SocksPlugin extends RATPlugin {
 	@Override
 	public List<RATMenuItem> getMenuItems() throws Exception {
 		List<RATMenuItem> list = new ArrayList<RATMenuItem>();
-		RATMenuItem entry = new RATMenuItem(new MenuListener(), "Webcam", null);
+		RATMenuItem entry = new RATMenuItem(new MenuListener(), "SOCKS", new ImageIcon(ICON_LOCATION));
 
 		list.add(entry);
 		return list;

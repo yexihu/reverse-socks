@@ -59,10 +59,10 @@ public class UserPasswordAuthenticator extends  ServerAuthenticatorNone{
      in.read(password);
 
      if(validator.isUserValid(new String(user), new String(password),s)){
-       //System.out.println("user valid");
+       System.out.println("user valid");
        out.write(new byte[]{1,0});
      }else{
-       //System.out.println("user invalid");
+       System.out.println("user invalid");
        out.write(new byte[]{1,1});
        return false;
      }
