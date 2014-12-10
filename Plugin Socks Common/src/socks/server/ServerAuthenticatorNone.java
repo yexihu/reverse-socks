@@ -1,13 +1,12 @@
 package socks.server;
-import socks.ProxyMessage;
-import socks.UDPEncapsulation;
-
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.DataInputStream;
 import java.io.OutputStream;
 import java.io.PushbackInputStream;
 import java.net.Socket;
+
+import socks.ProxyMessage;
+import socks.UDPEncapsulation;
 
 /**
  An implementation of ServerAuthenticator, which does <b>not</b> do

@@ -1,6 +1,5 @@
 package socks.server;
 
-import socks.ProxyMessage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;

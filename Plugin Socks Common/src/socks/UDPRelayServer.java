@@ -1,7 +1,14 @@
 package socks;
-import socks.server.*;
-import java.net.*;
-import java.io.*;
+import java.io.IOException;
+import java.io.InterruptedIOException;
+import java.io.PrintStream;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+import socks.server.ServerAuthenticator;
 
 /**
  UDP Relay server, used by ProxyServer to perform udp forwarding.

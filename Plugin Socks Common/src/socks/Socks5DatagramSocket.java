@@ -1,6 +1,10 @@
 package socks;
-import java.net.*;
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InterruptedIOException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
 
 /**
   Datagram socket to interract through the firewall.<BR>

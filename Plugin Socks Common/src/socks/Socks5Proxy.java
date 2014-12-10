@@ -1,8 +1,13 @@
 package socks;
-import java.net.*;
-import java.io.*;
-import java.util.Hashtable;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 import java.util.Enumeration;
+import java.util.Hashtable;
 
 /**
  SOCKS5 CProxy.

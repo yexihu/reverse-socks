@@ -1,8 +1,8 @@
 package socks;
-import java.net.*;
-import java.io.*;
-import java.util.Hashtable;
-import java.util.Enumeration;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 /**
   CProxy which describes SOCKS4 proxy.

@@ -1,7 +1,10 @@
 package socks;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.*;
+import java.util.Enumeration;
+import java.util.Hashtable;
+import java.util.StringTokenizer;
+import java.util.Vector;
 
 /**
  * Class InetRange provides the means of defining the range of inetaddresses.

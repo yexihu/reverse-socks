@@ -1,11 +1,15 @@
 package socks.server;
-import socks.InetRange;
-import socks.ProxyMessage;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Vector;
-import java.util.Enumeration;
-import java.net.*;
-import java.io.*;
+
+import socks.InetRange;
+import socks.ProxyMessage;
 
 /**
   An implementation of socks.ServerAuthentication which provides

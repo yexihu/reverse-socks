@@ -1,8 +1,11 @@
 package socks;
-import java.net.*;
-import java.io.*;
-import java.util.Hashtable;
-import java.util.Enumeration;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InterruptedIOException;
+import java.io.OutputStream;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
 
 /**
   Abstract class CProxy, base for classes Socks4Proxy and Socks5Proxy.

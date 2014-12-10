@@ -1,7 +1,18 @@
 package socks;
+import java.io.EOFException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InterruptedIOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.io.PushbackInputStream;
+import java.net.ConnectException;
+import java.net.InetAddress;
+import java.net.NoRouteToHostException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
 import socks.server.ServerAuthenticator;
-import java.net.*;
-import java.io.*;
 
 /**
     SOCKS4 and SOCKS5 proxy, handles both protocols simultaniously.

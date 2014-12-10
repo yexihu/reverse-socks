@@ -1,7 +1,11 @@
 package socks;
 
-import java.net.*;
-import java.io.*;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 
 /**
    SocksServerSocket allows to accept connections from one particular

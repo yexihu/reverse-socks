@@ -1,9 +1,9 @@
 package socks;
 
+import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.DataInputStream;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
