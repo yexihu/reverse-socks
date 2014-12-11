@@ -35,6 +35,8 @@ public class FrameSocks extends JFrame {
 	private JSpinner spinner;
 	private RATObject ratobj;
 	private JLabel lbl;
+	private JButton btnStop;
+	private JButton btnStart;
 
 	public FrameSocks(RATObject ratobj) {
 		this.ratobj = ratobj;
@@ -84,14 +86,22 @@ public class FrameSocks extends JFrame {
 		txtPass.setEnabled(false);
 		txtPass.setColumns(10);
 		
-		JButton btnStart = new JButton("Start");
+		btnStart = new JButton("Start");
 		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				start();
+				toggle(true);
 			}
 		});
 		
 		lbl = new JLabel("Idle...");
+		
+		btnStop = new JButton("Stop");
+		btnStop.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				toggle(false);
+			}
+		});
+		btnStop.setEnabled(false);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -104,7 +114,7 @@ public class FrameSocks extends JFrame {
 							.addComponent(txtHost, GroupLayout.PREFERRED_SIZE, 176, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(spinner, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
 							.addGroup(gl_contentPane.createSequentialGroup()
 								.addComponent(lblPass)
 								.addGap(10)
@@ -112,10 +122,12 @@ public class FrameSocks extends JFrame {
 							.addGroup(gl_contentPane.createSequentialGroup()
 								.addComponent(lblUser)
 								.addPreferredGap(ComponentPlacement.UNRELATED)
-								.addComponent(txtUser))
-							.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+								.addComponent(txtUser, 253, 253, 253))
+							.addGroup(gl_contentPane.createSequentialGroup()
 								.addComponent(lbl)
-								.addPreferredGap(ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
+								.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(btnStop)
+								.addPreferredGap(ComponentPlacement.RELATED)
 								.addComponent(btnStart)))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(rdbtnSocks5)
@@ -152,24 +164,33 @@ public class FrameSocks extends JFrame {
 					.addPreferredGap(ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnStart)
-						.addComponent(lbl))
+						.addComponent(lbl)
+						.addComponent(btnStop))
 					.addContainerGap())
 		);
 		contentPane.setLayout(gl_contentPane);
 	}
 	
-	private void start() {
+	private void toggle(boolean start) {
 		try {
-			boolean socks5 = rdbtnSocks5.isSelected();
-			boolean auth = chckbxUseAuthentication.isSelected();
-			String user = txtUser.getText();
-			String pass = txtPass.getText();
-			String host = txtUser.getText();
-			int port = (Integer) spinner.getValue();
+			if (start) {
+				boolean socks5 = rdbtnSocks5.isSelected();
+				boolean auth = chckbxUseAuthentication.isSelected();
+				String user = txtUser.getText();
+				String pass = txtPass.getText();
+				String host = txtUser.getText();
+				int port = (Integer) spinner.getValue();
+				
+				Packet118Start packet = new Packet118Start(ratobj, socks5, auth, user, pass, host, port);
+				packet.setFrame(this);
+				ratobj.addToSendQueue(packet);
+			} else {
+				Packet119Stop packet = new Packet119Stop(ratobj);
+				ratobj.addToSendQueue(packet);
+			}
 			
-			Packet118Start packet = new Packet118Start(ratobj, socks5, auth, user, pass, host, port);
-			packet.setFrame(this);
-			ratobj.addToSendQueue(packet);
+			btnStop.setEnabled(start);
+			btnStart.setEnabled(!start);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}

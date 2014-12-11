@@ -158,7 +158,7 @@ public class ProxyServer implements Runnable{
      Start the CProxy server at given port.<br>
      This methods blocks.
     */
-   public void start(int port){
+   public void start(int port) throws Exception {
       start(port,5,null);
    }
 
@@ -171,8 +171,7 @@ public class ProxyServer implements Runnable{
      inclusive. <br>
      This methods blocks. 
     */
-   public void start(int port,int backlog,InetAddress localIP){
-      try{
+   public void start(int port,int backlog,InetAddress localIP) throws Exception {
         ss = new ServerSocket(port,backlog,localIP);
         log("Starting SOCKS Proxy on:"+ss.getInetAddress().getHostAddress()+":"
                                       +ss.getLocalPort());
@@ -183,10 +182,7 @@ public class ProxyServer implements Runnable{
           ProxyServer ps = new ProxyServer(auth,s);
           (new Thread(ps)).start();
         }
-      }catch(IOException ioe){
-        ioe.printStackTrace();
-      }finally{
-      }
+      
    }
 
    /**
