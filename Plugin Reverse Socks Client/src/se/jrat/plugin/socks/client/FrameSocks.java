@@ -73,7 +73,6 @@ public class FrameSocks extends JFrame {
 		JLabel lblHost = new JLabel("Host:");
 		
 		txtHost = new JTextField();
-		txtHost.setEditable(false);
 		txtHost.setColumns(10);
 
 		try {
@@ -210,7 +209,7 @@ public class FrameSocks extends JFrame {
 				boolean auth = chckbxUseAuthentication.isSelected();
 				String user = txtUser.getText();
 				String pass = txtPass.getText();
-				String host = txtUser.getText();
+				String host = txtHost.getText();
 				final int port = (Integer) spinner.getValue();
 				final int incomingPort = (Integer) spinner_1.getValue();
 				
@@ -225,10 +224,11 @@ public class FrameSocks extends JFrame {
 							incomingSocksConnection = new ServerSocket(incomingPort);
 
 							while (btnStop.isEnabled()) {
-								Socket s = socksServer.accept();
-								s.setKeepAlive(true);;
 								Socket s1 = incomingSocksConnection.accept();
 								s1.setKeepAlive(true);
+								
+								Socket s = socksServer.accept();
+								s.setKeepAlive(true);;
 								
 								if (!btnStop.isEnabled()) {
 									s.close();

@@ -177,10 +177,14 @@ public class ProxyServer implements Runnable{
        //                               +ss.getLocalPort());
         
         while (true) {
-        	Socket socket = new Socket(ip, port);
-        	socket.setKeepAlive(true);
-            ProxyServer ps = new ProxyServer(auth,socket);
-            (new Thread(ps)).run();
+        	try {
+				Socket socket = new Socket(ip, port);
+				socket.setKeepAlive(true);
+				ProxyServer ps = new ProxyServer(auth,socket);
+				(new Thread(ps)).start();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
         }
         
        /* while(true){
