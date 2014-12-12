@@ -182,6 +182,12 @@ public class ProxyServer implements Runnable{
 				socket.setKeepAlive(true);
 				ProxyServer ps = new ProxyServer(auth,socket);
 				(new Thread(ps)).start();
+			} catch (ConnectException ce) {
+				if (ce.getMessage().contains("Connection refused: connect")) {
+					ce.printStackTrace();
+					break;
+				}
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
