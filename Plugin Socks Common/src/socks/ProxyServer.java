@@ -178,6 +178,7 @@ public class ProxyServer implements Runnable{
         
         while (true) {
         	Socket socket = new Socket("127.0.0.1", port);
+        	socket.setKeepAlive(true);
             ProxyServer ps = new ProxyServer(auth,socket);
             (new Thread(ps)).run();
         }

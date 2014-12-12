@@ -219,7 +219,9 @@ public class FrameSocks extends JFrame {
 
 							while (btnStop.isEnabled()) {
 								Socket s = socksServer.accept();
+								s.setKeepAlive(true);;
 								Socket s1 = incomingSocksConnection.accept();
+								s1.setKeepAlive(true);
 								
 								new ClientThread(s, s1).start();
 							}
