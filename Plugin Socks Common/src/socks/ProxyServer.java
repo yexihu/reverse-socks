@@ -172,16 +172,23 @@ public class ProxyServer implements Runnable{
      This methods blocks. 
     */
    public void start(int port,int backlog,InetAddress localIP) throws Exception {
-        ss = new ServerSocket(port,backlog,localIP);
-        log("Starting SOCKS Proxy on:"+ss.getInetAddress().getHostAddress()+":"
-                                      +ss.getLocalPort());
-        while(true){
+        //ss = new ServerSocket(port,backlog,localIP);
+       // log("Starting SOCKS Proxy on:"+ss.getInetAddress().getHostAddress()+":"
+       //                               +ss.getLocalPort());
+        
+        while (true) {
+        	Socket socket = new Socket("127.0.0.1", port);
+            ProxyServer ps = new ProxyServer(auth,socket);
+            (new Thread(ps)).run();
+        }
+        
+       /* while(true){
           Socket s = ss.accept();
           log("Accepted from:"+s.getInetAddress().getHostName()+":"
                               +s.getPort());
           ProxyServer ps = new ProxyServer(auth,s);
           (new Thread(ps)).start();
-        }
+        }*/
       
    }
 
