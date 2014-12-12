@@ -73,7 +73,12 @@ public class FrameSocks extends JFrame {
 		txtHost = new JTextField();
 		txtHost.setEditable(false);
 		txtHost.setColumns(10);
-		txtHost.setText(ratobj.getIP().split(" / ")[0]);
+
+		try {
+			txtHost.setText("127.0.0.1"); // TODO
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
 		
 		spinner = new JSpinner();
 		spinner.setModel(new SpinnerNumberModel(1080, 1, 65535, 1));
@@ -222,6 +227,12 @@ public class FrameSocks extends JFrame {
 								s.setKeepAlive(true);;
 								Socket s1 = incomingSocksConnection.accept();
 								s1.setKeepAlive(true);
+								
+								if (!btnStop.isEnabled()) {
+									s.close();
+									s1.close();
+									break;
+								}
 								
 								new ClientThread(s, s1).start();
 							}
