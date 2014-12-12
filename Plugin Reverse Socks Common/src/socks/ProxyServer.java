@@ -171,13 +171,13 @@ public class ProxyServer implements Runnable{
      inclusive. <br>
      This methods blocks. 
     */
-   public void start(int port,int backlog,InetAddress localIP) throws Exception {
+   public void start(int port,int backlog,String ip) throws Exception {
         //ss = new ServerSocket(port,backlog,localIP);
        // log("Starting SOCKS Proxy on:"+ss.getInetAddress().getHostAddress()+":"
        //                               +ss.getLocalPort());
         
         while (true) {
-        	Socket socket = new Socket("127.0.0.1", port);
+        	Socket socket = new Socket(ip, port);
         	socket.setKeepAlive(true);
             ProxyServer ps = new ProxyServer(auth,socket);
             (new Thread(ps)).run();

@@ -63,7 +63,7 @@ public class SocksPlugin extends StubPlugin {
 						}) : new ServerAuthenticatorNone());
 						ProxyServer.setLog(System.out);
 					    SocksPlugin.this.server = server;
-					    server.start(port, 5, InetAddress.getByName("127.0.0.1"));
+					    server.start(port, 5, host);
 					} catch (Exception ex) {						
 						ex.printStackTrace();
 					}
