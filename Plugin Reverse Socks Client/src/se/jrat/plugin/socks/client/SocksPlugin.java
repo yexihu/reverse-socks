@@ -19,7 +19,7 @@ import jrat.api.events.OnSendPacketEvent;
 
 public class SocksPlugin extends RATPlugin {
 
-	public static final String ICON_LOCATION = System.getProperty("jrat.dir") + File.separator + "/files/plugins/SOCKS/icon.png";
+	public static final String ICON_LOCATION = System.getProperty("jrat.dir") + File.separator + "/files/plugins/ReverseSOCKS/icon.png";
 	
 	@Override
 	public void onEnable(OnEnableEvent event) throws Exception {
