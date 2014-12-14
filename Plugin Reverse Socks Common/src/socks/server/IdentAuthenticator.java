@@ -21,9 +21,10 @@ import socks.ProxyMessage;
   host address.
 */
 
+@SuppressWarnings("rawtypes")
 public class IdentAuthenticator extends ServerAuthenticatorNone{
    /** Vector of InetRanges */
-   Vector hosts;
+	Vector hosts;
 
    /** Vector of user hashes*/
    Vector users;
@@ -59,6 +60,7 @@ public class IdentAuthenticator extends ServerAuthenticatorNone{
     to indicate that anybody is allowed to connect from the hosts within given
     range.
    */
+   @SuppressWarnings("unchecked")
    public synchronized void add(InetRange hostRange,Hashtable users){
       this.hosts.addElement(hostRange);
       this.users.addElement(users);
