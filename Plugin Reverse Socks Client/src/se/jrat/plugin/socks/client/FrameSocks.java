@@ -9,6 +9,7 @@ import java.net.Socket;
 import javax.swing.ButtonGroup;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -48,6 +49,7 @@ public class FrameSocks extends JFrame {
 		this.ratobj = ratobj;
 		setTitle("Start SOCKS server");
 		setResizable(false);
+		setIconImage(new ImageIcon(SocksPlugin.ICON_LOCATION).getImage());
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 337, 235);
 		contentPane = new JPanel();
