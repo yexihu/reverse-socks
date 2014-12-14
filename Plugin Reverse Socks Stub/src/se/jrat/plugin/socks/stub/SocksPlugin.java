@@ -81,5 +81,10 @@ public class SocksPlugin extends StubPlugin {
 	public void onEnable() throws Exception {
 		
 	}
+	
+	@Override
+	public String getName() {
+		return "Reverse SOCKS";
+	}
 
 }

