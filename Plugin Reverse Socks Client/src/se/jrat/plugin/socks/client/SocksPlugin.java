@@ -82,13 +82,11 @@ public class SocksPlugin extends RATPlugin {
 
 	@Override
 	public List<RATControlMenuEntry> getControlTreeItems() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public ActionListener getGlobalMenuItemListener() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
