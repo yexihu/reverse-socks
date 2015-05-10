@@ -72,7 +72,7 @@ public class SocksPlugin extends RATPlugin {
 	}
 
 	@Override
-	public List<RATMenuItem> getMenuItems() throws Exception {
+	public List<RATMenuItem> getMenuItems() {
 		List<RATMenuItem> list = new ArrayList<RATMenuItem>();
 		RATMenuItem entry = new RATMenuItem(new MenuListener(), "Reverse SOCKS", new ImageIcon(ICON_LOCATION));
 
@@ -81,7 +81,7 @@ public class SocksPlugin extends RATPlugin {
 	}
 
 	@Override
-	public List<RATControlMenuEntry> getControlTreeItems() throws Exception {
+	public List<RATControlMenuEntry> getControlTreeItems() {
 		// TODO Auto-generated method stub
 		return null;
 	}
