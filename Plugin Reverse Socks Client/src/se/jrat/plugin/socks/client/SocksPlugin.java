@@ -1,93 +1,16 @@
 package se.jrat.plugin.socks.client;
 
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.ImageIcon;
-
+import iconlib.IconUtils;
 import jrat.api.RATPlugin;
-import jrat.api.events.OnConnectEvent;
-import jrat.api.events.OnDisableEvent;
-import jrat.api.events.OnDisconnectEvent;
-import jrat.api.events.OnEnableEvent;
-import jrat.api.events.OnPacketEvent;
-import jrat.api.events.OnSendPacketEvent;
-import jrat.api.ui.RATControlMenuEntry;
 import jrat.api.ui.RATMenuItem;
 
 public class SocksPlugin extends RATPlugin {
-
-	public static final String ICON_LOCATION = System.getProperty("jrat.dir") + File.separator + "/files/plugins/ReverseSOCKS/icon.png";
 	
-	@Override
-	public void onEnable(OnEnableEvent event) throws Exception {
-		
-	}
-
-	@Override
-	public void onPacket(OnPacketEvent event) throws Exception {
-		
-	}
-
-	@Override
-	public void onConnect(OnConnectEvent event) throws Exception {
-		
-	}
-
-	@Override
-	public void onDisconnect(OnDisconnectEvent event) throws Exception {
-		
-	}
-
-	@Override
-	public void onDisable(OnDisableEvent event) throws Exception {
-		
-	}
-
-	@Override
-	public void onSendPacket(OnSendPacketEvent event) throws Exception {
-		
-	}
-
-	@Override
-	public String getName() {
-		return "Reverse SOCKS";
-	}
-
-	@Override
-	public String getVersion() {
-		return "1.0";
-	}
-
-	@Override
-	public String getDescription() {
-		return "Connect to internet through remote machine";
-	}
-
-	@Override
-	public String getAuthor() {
-		return "jRAT";
-	}
-
-	@Override
-	public List<RATMenuItem> getMenuItems() {
-		List<RATMenuItem> list = new ArrayList<RATMenuItem>();
-		RATMenuItem entry = new RATMenuItem(new MenuListener(), "Reverse SOCKS", new ImageIcon(ICON_LOCATION));
-
-		list.add(entry);
-		return list;
-	}
-
-	@Override
-	public List<RATControlMenuEntry> getControlTreeItems() {
-		return null;
-	}
-
-	@Override
-	public ActionListener getGlobalMenuItemListener() {
-		return null;
+	public SocksPlugin() {
+		super("Reverse SOCKS", "1.0", "Connect to internet through remote machine", "jRAT");
+	
+		RATMenuItem entry = new RATMenuItem(new MenuListener(), "Reverse SOCKS", IconUtils.getIcon("icon", SocksPlugin.class));
+		RATMenuItem.addItem(entry);
 	}
 
 }

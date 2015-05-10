@@ -1,5 +1,7 @@
 package se.jrat.plugin.socks.client;
 
+import iconlib.IconUtils;
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,7 +11,6 @@ import java.net.Socket;
 import javax.swing.ButtonGroup;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -22,8 +23,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 
-import se.jrat.plugins.socks.ClientThread;
 import jrat.api.Client;
+import se.jrat.plugins.socks.ClientThread;
 
 @SuppressWarnings("serial")
 public class FrameSocks extends JFrame {
@@ -49,7 +50,7 @@ public class FrameSocks extends JFrame {
 		this.ratobj = ratobj;
 		setTitle("Start SOCKS server");
 		setResizable(false);
-		setIconImage(new ImageIcon(SocksPlugin.ICON_LOCATION).getImage());
+		setIconImage(IconUtils.getIcon("icon", FrameSocks.class).getImage());
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 337, 235);
 		contentPane = new JPanel();
