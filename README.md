@@ -11,4 +11,11 @@ A Reverse SOCKS proxy which will allow you to connect to internet through remote
 
 ## Dependencies
 
-- [jsocks](http://jsocks.sourceforge.net/) (Customized version!)
+- Client
+	- [API](https://github.com/java-rat/jrat-api)
+	- [iconlib](https://github.com/redpois0n/iconlib)
+	- [jsocks](http://jsocks.sourceforge.net/) (Customized version for reverse connecting included)
+
+- Stub
+	- [Stub API](https://github.com/java-rat/jrat-stub-api)
+	- [jsocks](http://jsocks.sourceforge.net/) (Customized version for reverse connecting included)
