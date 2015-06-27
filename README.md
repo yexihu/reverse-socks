@@ -7,7 +7,7 @@ A Reverse SOCKS proxy which will allow you to connect to internet through remote
 | Name			| Reverse SOCKS
 | Author     	| jRAT
 | Description   | Connect to internet through remote machine
-| Version		| 1.1
+| Version		| 1.2
 
 ## Packets
 
