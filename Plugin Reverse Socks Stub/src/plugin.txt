@@ -1,1 +1,1 @@
-se.jrat.plugin.socks.stub.SocksPlugin
+jrat.plugin.socks.stub.SocksPlugin

@@ -1,4 +1,4 @@
-package se.jrat.plugins.socks;
+package jrat.plugins.socks;
 
 public class Global {
 	

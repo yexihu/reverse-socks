@@ -1,4 +1,4 @@
-package se.jrat.plugin.socks.client;
+package jrat.plugin.socks.client;
 
 import java.util.List;
 

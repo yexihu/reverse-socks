@@ -1,4 +1,4 @@
-package se.jrat.plugin.socks.stub;
+package jrat.plugin.socks.stub;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -8,7 +8,7 @@ import java.util.Hashtable;
 import java.util.StringTokenizer;
 
 import jrat.api.stub.StubPlugin;
-import se.jrat.plugins.socks.Global;
+import jrat.plugins.socks.Global;
 import socks.InetRange;
 import socks.ProxyServer;
 import socks.server.IdentAuthenticator;

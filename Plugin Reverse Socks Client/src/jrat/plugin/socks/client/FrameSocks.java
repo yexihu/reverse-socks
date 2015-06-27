@@ -1,4 +1,4 @@
-package se.jrat.plugin.socks.client;
+package jrat.plugin.socks.client;
 
 import iconlib.IconUtils;
 
@@ -24,7 +24,7 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 
 import jrat.api.Client;
-import se.jrat.plugins.socks.ClientThread;
+import jrat.plugins.socks.ClientThread;
 
 @SuppressWarnings("serial")
 public class FrameSocks extends JFrame {

@@ -1,1 +1,1 @@
-se.jrat.plugin.socks.client.SocksPlugin
+jrat.plugin.socks.client.SocksPlugin
