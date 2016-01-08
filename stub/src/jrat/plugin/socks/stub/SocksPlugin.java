@@ -22,11 +22,6 @@ public class SocksPlugin extends StubPlugin {
 	private DataInputStream dis;
 	private DataOutputStream dos;
 	private ProxyServer server;
-	
-	@Override
-	public void onStart() throws Exception {
-		
-	}
 
 	@Override
 	public void onDisconnect(Exception ex) throws Exception {
