@@ -1,12 +1,8 @@
 package jrat.plugin.socks.client;
 
 import iconlib.IconUtils;
-
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.net.ServerSocket;
-import java.net.Socket;
+import jrat.api.Client;
+import jrat.plugins.socks.ClientThread;
 
 import javax.swing.ButtonGroup;
 import javax.swing.GroupLayout;
@@ -22,9 +18,11 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
-
-import jrat.api.Client;
-import jrat.plugins.socks.ClientThread;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.net.ServerSocket;
+import java.net.Socket;
 
 @SuppressWarnings("serial")
 public class FrameSocks extends JFrame {

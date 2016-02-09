@@ -1,9 +1,9 @@
 package jrat.plugin.socks.client;
 
-import java.util.List;
-
 import jrat.api.Client;
 import jrat.api.ui.RATMenuItemActionListener;
+
+import java.util.List;
 
 public class MenuListener implements RATMenuItemActionListener {
 
